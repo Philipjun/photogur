@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
       {
         :title =>"NA",
         :artist => "NA",
-        :url => "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQxZJtBjUCxXxNgPC2UosDQFUa9rnIO2TgEwkNPlQW8wr4HPRMUEQ"
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/wave.jpg"
       },
     
 
@@ -28,7 +28,7 @@ class PicturesController < ApplicationController
       {
         :title => "NA",
         :artist => "NA",
-        :url => "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQxZJtBjUCxXxNgPC2UosDQFUa9rnIO2TgEwkNPlQW8wr4HPRMUEQ"
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/wave.jpg"
       },
 
       {
