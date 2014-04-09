@@ -1,7 +1,7 @@
 Photogur::Application.routes.draw do
-  resources :pictures
-  root :to => "pictures#index"
+  get 'pictures' => 'pictures#index'
 end
+
 
   # The priority is based upon raiorder of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
