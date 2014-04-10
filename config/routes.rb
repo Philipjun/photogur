@@ -5,6 +5,11 @@ Photogur::Application.routes.draw do
   post 'pictures' => "pictures#create"
   get 'pictures/new' => 'pictures#new'
   get 'pictures/:id' => 'pictures#show' 
+  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+  patch 'pictures/:id' => "pictures#update"
+  delete 'pictures/:id' => 'pictures#destory', as: "delete_picture"
+
+  root :to => "pictures#index"
 end
 
 
