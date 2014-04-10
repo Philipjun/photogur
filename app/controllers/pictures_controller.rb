@@ -1,43 +1,55 @@
 class PicturesController < ApplicationController
   def index
-    @pictures = Picture.all
-  end
-  
+    @pictures = [
+      {
+        :title => "A",
+        :artist => "A",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/house.jpg"
+      }
 
-  def new
-    @picture = Picture.new
-  end
+      {
+        :title => "B",
+        :artist => "B",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/wave.jpg"
 
-  def create
-  @picture = Picture.new(picture_params)
-    if @picture.save
-      redirect_to pictures_url
-    else
-      render :new
-    end
-  end
+      }
 
-  def edit
-    @picture = Picture.new(params[:id])
-  end
-
-  def update
-    @picture = Picture.find(params[:id])
-    if @picture.update_attributes(picture_params)
-      redirect_to "/pictures/#{@picture.id}"
-    else
-      render :edit
-    end
+      {
+        :title =>"C",
+        :artist => "C",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
+      }
+      
+    ]
   end
 
-  def destroy
-    @picture = Picture.find(params[:id])
-    @picture.destroy
-    redirect_to pictures_url
-  end
+  def show
+    @pictures = [
+      {
+        :title => "A",
+        :artist => "A",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/house.jpg"
+      }
 
-private
-def picture_params
-  params.require(:picture).permit(:artist, :title, :url)
+      {
+        :title => "B",
+        :artist => "B",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/wave.jpg"
+      }
+      
+      {
+        :title =>"C",
+        :artist => "C",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
+      }
+    ]
+    @picture = @pictures[params[:id].to_i]
+end
+
+def new
+end
+
+def create
+  render :text => "Saving a picture. URL:#{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
   end
 end
